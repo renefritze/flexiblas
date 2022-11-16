@@ -20,7 +20,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
         - uses: actions/checkout@v3
-        - uses: legoktm/gh-action-build-deb@ubuntu-jammy
+        - uses: legoktm/gh-action-build-deb@${{ matrix.os }}
           with:
             args: --no-sign
         - uses: actions/upload-artifact@v3
