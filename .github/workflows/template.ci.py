@@ -42,12 +42,12 @@ jobs:
 
 tpl = jinja2.Template(tpl)
 
+# buster does not have the right build time deps
 job_os = [
     ("jammy", "ubuntu-jammy"),
     ("kinetic", "ubuntu-kinetic"),
     ("focal", "ubuntu-focal"),
-    ("buster", "debian-buster"),
-    ("bullseye", "debian-bullseye"),    
+    ("bullseye", "debian-bullseye"),
 ]
 with open(os.path.join(os.path.dirname(__file__), 'build_packages.yml'), 'wt') as yml:
     yml.write(tpl.render(**locals()))
